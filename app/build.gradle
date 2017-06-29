@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-aspectjx'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "me.drakeet.seashell"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+    }
+
+//    signingConfigs {
+//        app1 {
+//            storeFile file("s.keystore")
+//            storePassword sp
+//            keyAlias kn
+//            keyPassword kp
+//        }
+//    }
+
+    buildTypes {
+//        release {
+//            signingConfig signingConfigs.app1
+//        }
+        productFlavors {
+            defaultFlavor {
+                proguardFile 'proguard-rules.txt'
+            }
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'net.simonvt.menudrawer:menudrawer:3.0.+'
+    //compile project(':libraries:materialdialog')
+    compile 'me.drakeet.materialdialog:library:1.0.7'
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.squareup.leakcanary:leakcanary-android:1.5.1'
+     compile 'org.aspectj:aspectjrt:1.8.9'
+}
